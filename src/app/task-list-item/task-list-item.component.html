@@ -1,0 +1,5 @@
+<div class="view">
+  <input class="toggle" type="checkbox" (click)="toggleTaskDone(task)" [checked]="task.Done">
+  <label>{{task.Title}}</label>
+  <button class="destroy" (click)="removeTask(task)"></button>
+</div>

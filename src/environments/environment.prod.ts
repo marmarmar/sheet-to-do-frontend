@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  apiUrl: 'http://sheet-to-do-api.azurewebsites.net/api/'
 };
