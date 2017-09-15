@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://sheet-to-do-api.azurewebsites.net/api/'
+  apiUrl: 'https://sheet-to-do-api.azurewebsites.net/api/'
 };
