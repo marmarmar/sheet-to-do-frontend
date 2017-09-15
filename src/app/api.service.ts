@@ -16,7 +16,7 @@ export class ApiService {
 
   // API: GET /tasks
   public getAllTasks(): Observable<Task[]> {
-    return this.http.get(API_URL + '/Tasks')
+    return this.http.get(API_URL + 'Tasks')
     .map(response => {
       const tasks = response.json();
       return tasks.map((task) => new Task(task));
@@ -27,7 +27,7 @@ export class ApiService {
   // API: POST /tasks
   public createTask(task: Task): Observable<Task> {
     return this.http
-    .post(API_URL + '/Tasks', task)
+    .post(API_URL + 'Tasks', task)
     .map(response => {
       return new Task(response.json());
     })
@@ -37,7 +37,7 @@ export class ApiService {
   // API: GET /tasks/:id
   public getTaskById(taskId: number): Observable<Task> {
     return this.http
-    .get(API_URL + '/Tasks/' + taskId)
+    .get(API_URL + 'Tasks/' + taskId)
     .map(response => {
       return new Task(response.json());
     })
@@ -47,7 +47,7 @@ export class ApiService {
   // API: PUT /tasks/:id
   public updateTask(task: Task): Observable<Task> {
     return this.http
-    .put(API_URL + '/Tasks/' + task.Id, task)
+    .put(API_URL + 'Tasks/' + task.Id, task)
     .map(response => {
       return new Task(response.json());
     })
@@ -57,7 +57,7 @@ export class ApiService {
   // DELETE /tasks/:id
   public deleteTaskById(taskId: number): Observable<null> {
     return this.http
-    .delete(API_URL + '/Tasks/' + taskId)
+    .delete(API_URL + 'Tasks/' + taskId)
     .map(response => null)
     .catch(this.handleError);
   }
