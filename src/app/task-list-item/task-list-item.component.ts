@@ -15,6 +15,9 @@ export class TaskListItemComponent{
   
     @Output()
     toggleDone: EventEmitter<Task> = new EventEmitter();
+
+    @Output()
+    update: EventEmitter<Task> = new EventEmitter();
   
     constructor() {
     }
@@ -25,5 +28,9 @@ export class TaskListItemComponent{
   
     removeTask(task: Task) {
       this.remove.emit(task);
+    }
+
+    updateTask(task: Task) {
+      this.update.emit(task);
     }
 }

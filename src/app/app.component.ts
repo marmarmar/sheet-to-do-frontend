@@ -56,4 +56,15 @@ export class AppComponent implements OnInit{
       }
     );
   }
+
+  onUpdateTask(task) {
+    this.taskDataService.
+    updateTask(task).
+    subscribe(
+      (updatedTask) => {
+        task = updatedTask;
+      }
+    );
+    console.log("hello")
+  }
 }

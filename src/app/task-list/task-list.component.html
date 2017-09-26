@@ -4,7 +4,9 @@
       <app-task-list-item
       [task]="task"
       (toggleDone)="onToggleTaskDone($event)"
-      (remove)="onRemoveTask($event)"></app-task-list-item>
+      (remove)="onRemoveTask($event)"
+      (update)="onUpdateTask($event)">
+      </app-task-list-item>
     </li>
   </ul>
 </section>

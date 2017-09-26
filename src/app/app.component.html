@@ -6,8 +6,11 @@
    
     <app-task-list-header (add)="onAddTask($event)"></app-task-list-header>
    
-    <app-task-list [tasks]="tasks" (toggleDone)="onToggleTaskDone($event)"
-    (remove)="onRemoveTask($event)"></app-task-list>
+    <app-task-list [tasks]="tasks"
+     (toggleDone)="onToggleTaskDone($event)"
+     (remove)="onRemoveTask($event)"
+     (update)="onUpdateTask($event)">
+    </app-task-list>
    
     <app-task-list-footer [tasks]="tasks"></app-task-list-footer>
   
