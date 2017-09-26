@@ -49,10 +49,10 @@ export class AppComponent implements OnInit{
 
   onRemoveTask(task) {
     this.taskDataService.
-    deleteTaskById(task.Id)
+    deleteTaskById(task.TaskId)
     .subscribe(
       (_) => {
-        this.tasks = this.tasks.filter((t) => t.Id !== task.Id);
+        this.tasks = this.tasks.filter((t) => t.TaskId !== task.TaskId);
       }
     );
   }
