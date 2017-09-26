@@ -47,7 +47,7 @@ export class ApiService {
   // API: PUT /tasks/:id
   public updateTask(task: Task): Observable<Task> {
     return this.http
-    .put(API_URL + 'Tasks/' + task.Id, task)
+    .put(API_URL + 'Tasks/' + task.TaskId, task)
     .map(response => {
       return new Task(response.json());
     })
