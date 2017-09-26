@@ -1,9 +1,12 @@
 export class Task {
-    Id: number;
+    TaskId: number;
     Title: string = '';
-    Done: boolean = false;
-    Description: string = '';
     DueDate: Date;
+    Description: string = '';
+    Done: boolean = false;
+    User: User;
+    // TaskCategory: TaskCategory;
+    IsArchived: boolean = false;
   
     constructor(values: Object = {}) {
       Object.assign(this, values);
