@@ -1,4 +1,5 @@
 import { User } from "./user";
+import { TaskCategory } from "./task-category";
 
 export class Task {
     TaskId: number;
@@ -7,7 +8,7 @@ export class Task {
     Description: string = '';
     Done: boolean = false;
     User: User;
-    // TaskCategory: TaskCategory;
+    TaskCategory: TaskCategory;
     IsArchived: boolean = false;
   
     constructor(values: Object = {}) {
