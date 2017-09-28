@@ -1,6 +1,6 @@
 <ng-template #content let-c="close" let-d="dismiss">
     <div class="modal-header">
-      <h4 class="modal-title">Modal title</h4>
+      <h4 class="modal-title">Edit task:</h4>
       <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
         <span aria-hidden="true">&times;</span>
       </button>
@@ -13,8 +13,4 @@
     </div>
   </ng-template>
   
-  <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button>
-  
-  <hr>
-  
-  <pre>{{closeResult}}</pre>
+  <button class="btn btn-lg btn-outline-primary" (click)="open(content)"><i class="fa fa-pencil" aria-hidden="true"></i></button>
