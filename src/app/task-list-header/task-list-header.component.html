@@ -1,4 +1,8 @@
 <header class="header">
   <h1>Tasks</h1>
-  <input class="new-task" placeholder="What needs to be done?" autofocus="" [(ngModel)]="newTask.Title" (keyup.enter)="addTask()">
+  <form >
+  <div class="form-row">
+      <div class="col-7 col-center">
+  <input class="form-control form-control-lg " placeholder="What needs to be done?" autofocus="" [(ngModel)]="newTask.Title" (keyup.enter)="addTask()">
+      </div></div></form>
 </header>

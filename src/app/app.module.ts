@@ -9,8 +9,9 @@ import { TaskListFooterComponent } from './task-list-footer/task-list-footer.com
 import {TaskDataService} from './task-data.service';
 import { ApiService } from './api.service';
 import { HttpModule } from "@angular/http";
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModule } from '@angular/material';
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import { MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModule } from '@angular/material';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModu
     TaskListHeaderComponent,
     TaskListComponent,
     TaskListItemComponent,
-    TaskListFooterComponent
+    TaskListFooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,12 +28,13 @@ import { MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModu
     BrowserModule,
     FormsModule,
     HttpModule,
-    BrowserAnimationsModule,
-    MdButtonModule,
-    MdMenuModule,
-    MdCardModule,
-    MdToolbarModule,
-    MdIconModule
+    // BrowserAnimationsModule,
+    // MdButtonModule,
+    // MdMenuModule,
+    // MdCardModule,
+    // MdToolbarModule,
+    // MdIconModule
+    NgbModule.forRoot()
   ],
   providers: [TaskDataService, ApiService],
   bootstrap: [AppComponent]

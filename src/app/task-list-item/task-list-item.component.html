@@ -1,5 +1,10 @@
 <div class="view">
-  <input class="toggle" type="checkbox" (click)="toggleTaskDone(task)" [checked]="task.Done">
+    
+        <label  >
+            <input  type="checkbox" (click)="toggleTaskDone(task)" [checked]="task.Done" >
+          </label>
+      
+    
   <label>{{task.Title}}</label>
   <button class="destroy" (click)="removeTask(task)"><i class="fa fa-times" aria-hidden="true"></i></button>
   <button (click)="updateTask(task)"><i class="fa fa-pencil" aria-hidden="true"></i></button>
