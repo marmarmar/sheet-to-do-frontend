@@ -6,6 +6,7 @@
    
     <app-task-list-header (add)="onAddTask($event)"></app-task-list-header>
    
+    <ngbd-modal-basic></ngbd-modal-basic>
     <app-task-list [tasks]="tasks"
      (toggleDone)="onToggleTaskDone($event)"
      (remove)="onRemoveTask($event)"
