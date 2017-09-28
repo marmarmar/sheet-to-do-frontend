@@ -1,8 +1,16 @@
-<header class="header">
+<!-- <header class="header">
   <h1>Tasks</h1>
   <form >
   <div class="form-row">
       <div class="col-7 col-center">
   <input class="form-control form-control-lg " placeholder="What needs to be done?" autofocus="" [(ngModel)]="newTask.Title" (keyup.enter)="addTask()">
       </div></div></form>
-</header>
+</header> -->
+
+<header class="header">
+        <h1>Tasks</h1>
+        <div class="form-row">
+                <div class="col-7 col-center">
+        <input class="form-control form-control-lg new-task" placeholder="What needs to be done?" autofocus="" [(ngModel)]="newTask.Title" (keyup.enter)="addTask()">
+                </div></div>  
+    </header>
