@@ -1,4 +1,4 @@
-<!--The content below is only a placeholder and can be replaced.-->
+﻿<!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <!--ToDo section-->
   
@@ -9,7 +9,8 @@
     <app-task-list [tasks]="tasks"
      (toggleDone)="onToggleTaskDone($event)"
      (remove)="onRemoveTask($event)"
-     (update)="onUpdateTask($event)">
+     (update)="onUpdateTask($event)"
+     (archive)="onArchiveTask($event)">
     </app-task-list>
    
     <app-task-list-footer [tasks]="tasks"></app-task-list-footer>

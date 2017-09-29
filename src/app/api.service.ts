@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+﻿import { Injectable } from '@angular/core';
 import { environment } from '../environments/environment';
 import { Http, Response } from '@angular/http';
 import { Task } from './task';
@@ -6,6 +6,8 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
+//import { applyOperation } from 'fast-json-patch';
+
 
 const API_URL = environment.apiUrl;
 
@@ -52,6 +54,15 @@ export class ApiService {
       return new Task(response.json());
     })
     .catch(this.handleError);
+  }
+
+
+  // API: PATCH /tasks/:id
+  public archiveTask(task: Task): Observable<Task> {
+      return this.http
+          .patch(API_URL + 'Tasks/' + task.TaskId, { op: "replace", path: "IsArchived", value: true })
+          .map(response => null)
+          .catch(this.handleError);
   }
 
   // DELETE /tasks/:id

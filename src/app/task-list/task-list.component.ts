@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+﻿import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Task } from "../task";
 @Component({
   selector: 'app-task-list',
@@ -20,6 +20,9 @@ export class TaskListComponent{
   @Output()
   update: EventEmitter<Task> = new EventEmitter();
 
+  @Output()
+  archive: EventEmitter<Task> = new EventEmitter();
+
   constructor() {
   }
 
@@ -35,4 +38,7 @@ export class TaskListComponent{
     this.update.emit(task);
   }
 
+  onArchiveTask(task: Task) {
+      this.archive.emit(task);
+  }
 }
