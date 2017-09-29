@@ -1,5 +1,5 @@
 <section class="main" *ngIf="tasks.length > 0">
-  <ul class="task-list">
+  <ul class="task-list list-unstyled">
     <li *ngFor="let task of tasks" [class.Done]="task.Done">
       <app-task-list-item
       [task]="task"
