@@ -2,7 +2,7 @@ import { TestBed, inject } from '@angular/core/testing';
 import { Task } from '../models/task';
 import { TaskDataService } from './task-data.service';
 import { ApiService } from "./api.service";
-import { ApiMockService } from "../api-mock.service";
+import { ApiMockService } from "./api-mock.service";
 describe('TaskDataService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
