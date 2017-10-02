@@ -1,0 +1,29 @@
+
+.custom-control-indicator{
+    width: 1.5rem;
+    height: 1.5rem; 
+}
+.custom-control-input:checked ~ .custom-control-indicator {
+    color: #fff;
+    background-color: #283542;
+}
+
+.custom-control{
+    padding-left: 2rem;
+    padding-bottom: 2rem;
+    
+}
+.custom-control-description{
+    padding-left: 0.5rem;
+    padding-top: 0.25rem;
+}
+
+.btn-group-sm > .btn, .btn-sm {
+    padding: 0.3rem 0.4rem;
+    font-size: .875rem;
+    line-height: 1rem;
+    border-radius: .2rem;
+}
+.custom-control[_ngcontent-c4] {
+    padding-bottom: 0;
+}
