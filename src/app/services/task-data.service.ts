@@ -1,5 +1,5 @@
 ﻿import { Injectable } from '@angular/core';
-import {Task} from './models/task';
+import {Task} from '../models/task';
 import { ApiService } from './api.service';
 import { Observable } from 'rxjs/Observable';
 

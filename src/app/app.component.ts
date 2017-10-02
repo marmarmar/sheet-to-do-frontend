@@ -1,5 +1,5 @@
 ﻿import { Component, OnInit } from '@angular/core';
-import {TaskDataService} from './task-data.service';
+import {TaskDataService} from './services/task-data.service';
 import { Task } from './models/task';
 
 @Component({
@@ -68,7 +68,7 @@ export class AppComponent implements OnInit{
         task = updatedTask;
       }
     );
-    console.log('hello')
+    console.log('hello');
   }
 
   onArchiveTask(task) {

@@ -1,4 +1,4 @@
-import { Task } from './models/task';
+import { Task } from './task';
 
 describe('Task', () => {
   it('should create an instance', () => {
