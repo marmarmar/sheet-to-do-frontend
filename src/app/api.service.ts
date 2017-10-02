@@ -17,7 +17,7 @@ export class ApiService {
 
   // API: GET /tasks
   public getAllTasks(): Observable<Task[]> {
-      return this.http.get(API_URL + 'Tasks?userId=1')
+      return this.http.get(API_URL + 'tasks?userId=1')
     .map(response => {
       const tasks = response.json();
       return tasks.map((task) => new Task(task));
@@ -28,7 +28,7 @@ export class ApiService {
   // API: POST /tasks
   public createTask(task: Task): Observable<Task> {
     return this.http
-    .post(API_URL + 'Tasks', task)
+    .post(API_URL + 'tasks', task)
     .map(response => {
       return new Task(response.json());
     })
@@ -38,7 +38,7 @@ export class ApiService {
   // API: GET /tasks/:id
   public getTaskById(taskId: number): Observable<Task> {
     return this.http
-    .get(API_URL + 'Tasks/' + taskId)
+    .get(API_URL + 'tasks/' + taskId)
     .map(response => {
       return new Task(response.json());
     })
@@ -48,7 +48,7 @@ export class ApiService {
   // API: PUT /tasks/:id
   public updateTask(task: Task): Observable<Task> {
     return this.http
-    .put(API_URL + 'Tasks/' + task.TaskId, task)
+    .put(API_URL + 'tasks/' + task.taskId, task)
     .map(response => {
       return new Task(response.json());
     })
@@ -59,7 +59,7 @@ export class ApiService {
   // API: PATCH /tasks/:id
   public archiveTask(task: Task): Observable<Task> {
       return this.http
-          .patch(API_URL + 'Tasks/' + task.TaskId, [{ op: "replace", path: "IsArchived", value: true }])
+          .patch(API_URL + 'tasks/' + task.taskId, [{ op: 'replace', path: 'isArchived', value: true }])
           .map(response => null)
           .catch(this.handleError);
   }
@@ -67,7 +67,7 @@ export class ApiService {
   // DELETE /tasks/:id
   public deleteTaskById(taskId: number): Observable<null> {
     return this.http
-    .delete(API_URL + 'Tasks/' + taskId)
+    .delete(API_URL + 'tasks/' + taskId)
     .map(response => null)
     .catch(this.handleError);
   }

@@ -13,15 +13,15 @@ export class AppComponent implements OnInit{
 
   tasks: Task[] = [];
   newTask: Task = new Task();
-  
+
   public ngOnInit() {
-   this.getAllTasks()
+   this.getAllTasks();
   }
-  
+
   constructor(private taskDataService: TaskDataService) {
   }
 
-  getAllTasks(){
+  getAllTasks() {
     this.taskDataService
     .getAllTasks()
     .subscribe(
@@ -52,10 +52,10 @@ export class AppComponent implements OnInit{
 
   onRemoveTask(task) {
     this.taskDataService.
-    deleteTaskById(task.TaskId)
+    deleteTaskById(task.taskId)
     .subscribe(
       (_) => {
-        this.tasks = this.tasks.filter((t) => t.TaskId !== task.TaskId);
+        this.tasks = this.tasks.filter((t) => t.taskId !== task.taskId);
       }
     );
   }
@@ -68,7 +68,7 @@ export class AppComponent implements OnInit{
         task = updatedTask;
       }
     );
-    console.log("hello")
+    console.log('hello')
   }
 
   onArchiveTask(task) {
@@ -76,11 +76,11 @@ export class AppComponent implements OnInit{
           .archiveTask(task)
           .subscribe(
           (archiveTask) => {
-              task = archiveTask,
-              this.getAllTasks()
+              task = archiveTask;
+              this.getAllTasks();
           }
       );
-       
+
   }
 
 }

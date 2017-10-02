@@ -1,16 +1,16 @@
-import { User } from "./user";
-import { TaskCategory } from "./task-category";
+import { User } from './user';
+import { TaskCategory } from './task-category';
 
 export class Task {
-    TaskId: number;
-    Title: string = '';
-    DueDate: Date;
-    Description: string = '';
-    Done: boolean = false;
-    User: User;
-    TaskCategory: TaskCategory;
-    IsArchived: boolean = false;
-  
+    taskId: number;
+    title: string;
+    dueDate: Date;
+    description: string;
+    done: boolean;
+    user: User;
+    taskCategory: TaskCategory;
+    isArchived: boolean;
+
     constructor(values: Object = {}) {
       Object.assign(this, values);
     }

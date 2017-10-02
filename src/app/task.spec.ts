@@ -7,11 +7,11 @@ describe('Task', () => {
 });
 
 it('should accept values in the constructor', () => {
-  let task = new Task({
-    Title: 'hello',
-    Done: true
+  const task = new Task({
+    title: 'hello',
+    done: true
   });
-  expect(task.Title).toEqual('hello');
-  expect(task.Done).toEqual(true);
+  expect(task.title).toEqual('hello');
+  expect(task.done).toEqual(true);
 });
 

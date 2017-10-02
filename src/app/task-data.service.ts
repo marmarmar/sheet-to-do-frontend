@@ -30,12 +30,12 @@ export class TaskDataService {
   }
 
   toggleTaskDone(task: Task){
-    task.Done=!task.Done;
+    task.done=!task.done;
     return this.api.updateTask(task);
   }
 
   archiveTask(task: Task): Observable<Task> {
-      task.IsArchived = true;
+      task.isArchived = true;
       return this.api.archiveTask(task);
   }
 }
