@@ -3,7 +3,7 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { TaskListItemComponent } from './task-list-item.component';
-import { Task } from '../models/task';
+import { Task } from '../../models/task';
 
 describe('TaskListItemComponent', () => {
   let component: TaskListItemComponent;
