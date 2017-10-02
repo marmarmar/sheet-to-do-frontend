@@ -15,18 +15,21 @@ export class AppComponent implements OnInit{
   newTask: Task = new Task();
   
   public ngOnInit() {
-    this.taskDataService
-      .getAllTasks()
-      .subscribe(
-        (tasks) => {
-          this.tasks = tasks;
-        }
-      );
+   this.getAllTasks()
   }
   
   constructor(private taskDataService: TaskDataService) {
   }
 
+  getAllTasks(){
+    this.taskDataService
+    .getAllTasks()
+    .subscribe(
+      (tasks) => {
+        this.tasks = tasks;
+      }
+    );
+  }
   onToggleTaskDone(task) {
     this.taskDataService.
     toggleTaskDone(task).
@@ -73,9 +76,11 @@ export class AppComponent implements OnInit{
           .archiveTask(task)
           .subscribe(
           (archiveTask) => {
-              task = archiveTask
+              task = archiveTask,
+              this.getAllTasks()
           }
       );
+       
   }
 
 }
