@@ -6,7 +6,6 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
-//import { applyOperation } from 'fast-json-patch';
 
 
 const API_URL = environment.apiUrl;
@@ -18,7 +17,7 @@ export class ApiService {
 
   // API: GET /tasks
   public getAllTasks(): Observable<Task[]> {
-    return this.http.get(API_URL + 'Tasks')
+      return this.http.get(API_URL + 'Tasks?userId=1')
     .map(response => {
       const tasks = response.json();
       return tasks.map((task) => new Task(task));
@@ -60,7 +59,7 @@ export class ApiService {
   // API: PATCH /tasks/:id
   public archiveTask(task: Task): Observable<Task> {
       return this.http
-          .patch(API_URL + 'Tasks/' + task.TaskId, { op: "replace", path: "IsArchived", value: true })
+          .patch(API_URL + 'Tasks/' + task.TaskId, [{ op: "replace", path: "IsArchived", value: true }])
           .map(response => null)
           .catch(this.handleError);
   }

@@ -76,7 +76,6 @@ export class AppComponent implements OnInit{
               task = archiveTask
           }
       );
-      console.log("DUPA");
   }
 
 }
