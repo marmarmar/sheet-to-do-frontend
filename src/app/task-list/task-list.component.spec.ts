@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
 import { TaskListComponent } from './task-list.component';
-import { Task } from '../task';
+import { Task } from '../models/task';
 
 describe('TaskListComponent', () => {
   let component: TaskListComponent;

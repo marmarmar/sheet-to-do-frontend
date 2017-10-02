@@ -1,6 +1,6 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import {TaskDataService} from './task-data.service';
-import { Task } from './task';
+import { Task } from './models/task';
 
 @Component({
 
