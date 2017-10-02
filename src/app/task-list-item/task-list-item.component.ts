@@ -7,7 +7,6 @@ import { Task } from "../task";
   styleUrls: ['./task-list-item.component.css']
 })
 export class TaskListItemComponent{
-  
     @Input() task: Task;
   
     @Output()

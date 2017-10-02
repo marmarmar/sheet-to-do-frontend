@@ -1,4 +1,4 @@
-﻿import { Component, OnInit } from '@angular/core';
+﻿import { Component, OnInit, TemplateRef } from '@angular/core';
 import {TaskDataService} from './task-data.service';
 import { Task } from './task';
 
@@ -11,6 +11,8 @@ import { Task } from './task';
 })
 export class AppComponent implements OnInit{
 
+ 
+
   tasks: Task[] = [];
   newTask: Task = new Task();
   
@@ -20,7 +22,7 @@ export class AppComponent implements OnInit{
   
   constructor(private taskDataService: TaskDataService) {
   }
-
+  
   getAllTasks(){
     this.taskDataService
     .getAllTasks()
