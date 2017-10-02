@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+﻿import { Component, OnInit } from '@angular/core';
 import {TaskDataService} from './task-data.service';
 import { Task } from './task';
 
@@ -67,4 +67,15 @@ export class AppComponent implements OnInit{
     );
     console.log("hello")
   }
+
+  onArchiveTask(task) {
+      this.taskDataService
+          .archiveTask(task)
+          .subscribe(
+          (archiveTask) => {
+              task = archiveTask
+          }
+      );
+  }
+
 }

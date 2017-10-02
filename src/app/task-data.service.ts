@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+﻿import { Injectable } from '@angular/core';
 import {Task} from './task';
 import { ApiService } from './api.service';
 import { Observable } from 'rxjs/Observable';
@@ -32,5 +32,10 @@ export class TaskDataService {
   toggleTaskDone(task: Task){
     task.Done=!task.Done;
     return this.api.updateTask(task);
+  }
+
+  archiveTask(task: Task): Observable<Task> {
+      task.IsArchived = true;
+      return this.api.archiveTask(task);
   }
 }

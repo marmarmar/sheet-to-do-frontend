@@ -1,7 +1,8 @@
-<div class="view">
+﻿<div class="view">
   <input class="toggle" type="checkbox" (click)="toggleTaskDone(task)" [checked]="task.Done">
   <label>{{task.Title}}</label>
   <button class="destroy" (click)="removeTask(task)"><i class="fa fa-times" aria-hidden="true"></i></button>
   <button (click)="updateTask(task)"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+  <button (click)="archiveTask(task)"><i class="" aria-hidden="true"></i></button>
   
 </div>
