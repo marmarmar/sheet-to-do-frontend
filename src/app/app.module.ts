@@ -12,6 +12,7 @@ import { HttpModule } from '@angular/http';
 import { AppBootstrapModule } from './app-bootstrap.module';
 import { TaskCategoryListComponent } from './components/task-category-list/task-category-list.component';
 import { TaskCategoryComponent } from './components/task-category/task-category.component';
+import {TaskCategoryService} from './services/task-category.service';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { TaskCategoryComponent } from './components/task-category/task-category.
     HttpModule,
     AppBootstrapModule
   ],
-  providers: [TaskDataService, ApiService],
+  providers: [TaskDataService, ApiService, TaskCategoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

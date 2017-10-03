@@ -3,9 +3,11 @@
   <h2>Categories</h2>
   <hr>
   <ul class="list-unstyled categories">
-    <li><h4>All Tasks</h4></li>
+    <li><h4>All tasks</h4></li>
     <li><h4>Today</h4></li>
     <li><h4>Tomorrow</h4></li>
     <li><h4><b>Week</b></h4></li>
-    <li><h4>Stefan's birthday</h4></li>
+    <li *ngFor="let taskCategory of taskCategories">
+      <h4>{{ taskCategory.name}}</h4>
+    </li>
   </ul>
