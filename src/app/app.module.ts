@@ -9,9 +9,7 @@ import { TaskListFooterComponent } from './components/task-list-footer/task-list
 import {TaskDataService} from './services/task-data.service';
 import { ApiService } from './services/api.service';
 import { HttpModule } from '@angular/http';
-// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-// import { MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModule } from '@angular/material';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { AppBootstrapModule } from './app-bootstrap.module';
 
 @NgModule({
   declarations: [
@@ -28,13 +26,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     BrowserModule,
     FormsModule,
     HttpModule,
-    // BrowserAnimationsModule,
-    // MdButtonModule,
-    // MdMenuModule,
-    // MdCardModule,
-    // MdToolbarModule,
-    // MdIconModule
-    NgbModule.forRoot()
+    AppBootstrapModule
   ],
   providers: [TaskDataService, ApiService],
   bootstrap: [AppComponent]

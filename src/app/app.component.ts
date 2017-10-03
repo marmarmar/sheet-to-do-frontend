@@ -1,4 +1,4 @@
-﻿import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import {TaskDataService} from './services/task-data.service';
 import { Task } from './models/task';
 
