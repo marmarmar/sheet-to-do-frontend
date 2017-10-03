@@ -1,7 +1,7 @@
 export class User {
-    UserId: number;
-    Login: string = '';
-    Password: string = '';
+    userId: number;
+    login: string;
+    password: string;
 
     constructor(values: Object = {}) {
         Object.assign(this, values);

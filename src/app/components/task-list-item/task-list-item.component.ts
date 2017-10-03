@@ -1,5 +1,5 @@
 ﻿import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Task } from "../task";
+import { Task } from "../../models/task";
 
 @Component({
   selector: 'app-task-list-item',
@@ -7,11 +7,12 @@ import { Task } from "../task";
   styleUrls: ['./task-list-item.component.css']
 })
 export class TaskListItemComponent{
+
     @Input() task: Task;
-  
+
     @Output()
     remove: EventEmitter<Task> = new EventEmitter();
-  
+
     @Output()
     toggleDone: EventEmitter<Task> = new EventEmitter();
 
@@ -23,11 +24,11 @@ export class TaskListItemComponent{
 
     constructor() {
     }
-  
+
     toggleTaskDone(task: Task) {
       this.toggleDone.emit(task);
     }
-  
+
     removeTask(task: Task) {
       this.remove.emit(task);
     }

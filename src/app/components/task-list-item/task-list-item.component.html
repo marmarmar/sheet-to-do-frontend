@@ -1,15 +1,15 @@
-<div class="view"> 
+<div class="view">
   <ul class="list-unstyled list-inline">
     <li class="list-inline-item">
         <label class="custom-control custom-checkbox">
-            <input  type="checkbox" class="custom-control-input" (click)="toggleTaskDone(task)" [checked]="task.Done" >
+            <input  type="checkbox" class="custom-control-input" (click)="toggleTaskDone(task)" [checked]="task.done" >
             <span class="custom-control-indicator"></span>
             <span class="custom-control-description">
                 <li class="list-inline-item">
-                    <label class="title">{{task.Title}}</label>
+                    <label class="title">{{task.title}}</label>
                 </li>
                 <li class="list-inline-item">
-                        <label class="title"> - {{task.DueDate| date:'MMMM, dd HH:mm'}}</label>
+                        <label class="title"> - {{task.dueDate| date:'MMMM, dd HH:mm'}}</label>
                     </li>
                 <li class="list-inline-item">
                     <button type="button" class="btn btn-outline-dark btn-sm" (click)="updateTask(task)"><i class="fa fa-pencil" aria-hidden="true"></i></button>
@@ -18,12 +18,12 @@
                     <button type="button" class="btn btn-outline-dark btn-sm destroy" (click)="removeTask(task)"><i class="fa fa-times" aria-hidden="true"></i></button>
                 </li>
                 <li>
-                    <button (click)="archiveTask(task)"><i class="" aria-hidden="true"></i></button>  
+                    <button (click)="archiveTask(task)"><i class="" aria-hidden="true"></i></button>
                 </li>
             </span>
           </label>
-       
+
     </li>
-   
+
   </ul>
 </div>

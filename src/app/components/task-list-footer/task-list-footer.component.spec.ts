@@ -4,7 +4,7 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { TaskListFooterComponent } from './task-list-footer.component';
-import { Task } from '../task';
+import { Task } from '../../models/task';
 
 describe('TaskListFooterComponent', () => {
   let component: TaskListFooterComponent;
