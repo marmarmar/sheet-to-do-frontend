@@ -10,6 +10,8 @@ import {TaskDataService} from './services/task-data.service';
 import { ApiService } from './services/api.service';
 import { HttpModule } from '@angular/http';
 import { AppBootstrapModule } from './app-bootstrap.module';
+import { TaskCategoryListComponent } from './components/task-category-list/task-category-list.component';
+import { TaskCategoryComponent } from './components/task-category/task-category.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { AppBootstrapModule } from './app-bootstrap.module';
     TaskListComponent,
     TaskListItemComponent,
     TaskListFooterComponent,
+    TaskCategoryListComponent,
+    TaskCategoryComponent,
   ],
   imports: [
     BrowserModule,
