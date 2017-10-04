@@ -24,7 +24,7 @@ export class TaskDataService extends ApiService {
 
   // API: GET /tasks?taskCategoryId=
   getTasksByCustomCategory(taskCategory: TaskCategory): Observable<Task[]> {
-    return this.http.get(API_URL + 'tasks?taskCategoryId=${taskCategoryId.}')
+    return this.http.get(API_URL + `tasks?taskCategoryId=${taskCategory.taskCategoryId}`)
       .map(response => response.json() as Task[])
       .catch(this.handleError);
   }
