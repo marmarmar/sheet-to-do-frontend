@@ -4,6 +4,7 @@ import { ApiService } from './api.service';
 import { Observable } from 'rxjs/Observable';
 import { environment } from '../../environments/environment';
 import { Http, Response } from '@angular/http';
+import {TaskCategory} from '../models/task-category';
 
 const API_URL = environment.apiUrl;
 
@@ -19,6 +20,13 @@ export class TaskDataService extends ApiService {
       return tasks.map((task) => new Task(task));
     })
     .catch(this.handleError);
+  }
+
+  // API: GET /tasks?taskCategoryId=
+  getTasksByCustomCategory(taskCategory: TaskCategory): Observable<Task[]> {
+    return this.http.get(API_URL + 'tasks?taskCategoryId=${taskCategoryId.}')
+      .map(response => response.json() as Task[])
+      .catch(this.handleError);
   }
 
   // API: GET /tasks/:id
