@@ -3,11 +3,21 @@
   <h2>Categories</h2>
   <hr>
   <ul class="list-unstyled categories">
-    <li><h4>All tasks</h4></li>
-    <li><h4>Today</h4></li>
-    <li><h4>Tomorrow</h4></li>
-    <li><h4><b>Week</b></h4></li>
+    <!--default categories-->
+    <li>
+      <app-task-category-default [taskCategoryDefaultName]="allTasksCategoryName"></app-task-category-default>
+    </li>
+    <li>
+      <app-task-category-default [taskCategoryDefaultName]="todayCategoryName"></app-task-category-default>
+    </li>
+    <li>
+      <app-task-category-default [taskCategoryDefaultName]="tomorrowCategoryName"></app-task-category-default>
+    </li>
+    <li>
+      <app-task-category-default [taskCategoryDefaultName]="weekCategoryName"></app-task-category-default>
+    </li>
+    <!--custom categories-->
     <li *ngFor="let taskCategory of taskCategories">
-      <h4>{{ taskCategory.name}}</h4>
+      <app-task-category [taskCategory]="taskCategory"></app-task-category>
     </li>
   </ul>
