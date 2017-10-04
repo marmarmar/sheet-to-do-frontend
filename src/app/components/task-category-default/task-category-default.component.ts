@@ -14,6 +14,5 @@ export class TaskCategoryDefaultComponent implements OnInit {
   }
 
   public changeTaskCategory() {
-    this.taskCategoryDefaultName = 'Bigooos';
   }
 }
