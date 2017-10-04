@@ -1,5 +1,5 @@
 ﻿import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Task } from "../../models/task";
+import { Task } from "../../../models/task";
 @Component({
   selector: 'app-task-list',
   templateUrl: './task-list.component.html',
@@ -10,10 +10,7 @@ export class TaskListComponent{
 
   @Input()
   tasks: Task[];
-
-  @Output()
-  remove: EventEmitter<Task> = new EventEmitter();
-
+  
   @Output()
   toggleDone: EventEmitter<Task> = new EventEmitter();
 
@@ -29,11 +26,7 @@ export class TaskListComponent{
   onToggleTaskDone(task: Task) {
     this.toggleDone.emit(task);
   }
-
-  onRemoveTask(task: Task) {
-    this.remove.emit(task);
-  }
-
+  
   onUpdateTask(task: Task) {
     this.update.emit(task);
   }

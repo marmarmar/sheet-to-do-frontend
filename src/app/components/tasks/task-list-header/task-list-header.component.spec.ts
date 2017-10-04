@@ -3,22 +3,22 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { TaskListFooterComponent } from './task-list-footer.component';
-import { Task } from '../../models/task';
+import { TaskListHeaderComponent } from './task-list-header.component';
+import { Task } from '../../../models/task';
 
-describe('TaskListFooterComponent', () => {
-  let component: TaskListFooterComponent;
-  let fixture: ComponentFixture<TaskListFooterComponent>;
+describe('TaskListHeaderComponent', () => {
+  let component: TaskListHeaderComponent;
+  let fixture: ComponentFixture<TaskListHeaderComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TaskListFooterComponent ]
+      declarations: [ TaskListHeaderComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TaskListFooterComponent);
+    fixture = TestBed.createComponent(TaskListHeaderComponent);
     component = fixture.componentInstance;
     component.tasks = [
       new Task({ Id: 1, Title: 'Test', Done: false })
