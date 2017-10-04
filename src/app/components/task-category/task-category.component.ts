@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {TaskCategory} from '../../models/task-category';
 
 @Component({
   selector: 'app-task-category',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./task-category.component.css']
 })
 export class TaskCategoryComponent implements OnInit {
+  @Input() public taskCategory: TaskCategory;
 
   constructor() { }
 
