@@ -1,0 +1,23 @@
+
+  <!-- mock -->
+  <h2>Categories</h2>
+  <hr>
+  <ul class="list-unstyled categories">
+    <!--default categories-->
+    <li>
+      <app-task-category-default [taskCategoryDefaultName]="allTasksCategoryName"></app-task-category-default>
+    </li>
+    <li>
+      <app-task-category-default [taskCategoryDefaultName]="todayCategoryName"></app-task-category-default>
+    </li>
+    <li>
+      <app-task-category-default [taskCategoryDefaultName]="tomorrowCategoryName"></app-task-category-default>
+    </li>
+    <li>
+      <app-task-category-default [taskCategoryDefaultName]="weekCategoryName"></app-task-category-default>
+    </li>
+    <!--custom categories-->
+    <li *ngFor="let taskCategory of taskCategories">
+      <app-task-category [taskCategory]="taskCategory"></app-task-category>
+    </li>
+  </ul>
