@@ -1,22 +1,4 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
-<div >
-  <!--ToDo section-->
-  
-  <section class="todoapp">
-   
-      <app-task-list-footer [tasks]="tasks"></app-task-list-footer>
-      
-   
-    <app-task-list [tasks]="tasks"
-     (toggleDone)="onToggleTaskDone($event)"
-     (remove)="onRemoveTask($event)"
-     (update)="onUpdateTask($event)"
-     (archive)="onArchiveTask($event)">
-    </app-task-list>
-   
-    <app-task-list-header (add)="onAddTask($event)"></app-task-list-header>
-  
-  </section>
-</div>
+<app-tasks></app-tasks>
 

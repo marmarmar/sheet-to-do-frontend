@@ -1,11 +1,11 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { Task } from "../../models/task"
+import { Task } from "../../../models/task"
 @Component({
-  selector: 'app-task-list-header',
-  templateUrl: './task-list-header.component.html',
-  styleUrls: ['./task-list-header.component.css']
+  selector: 'app-task-list-footer',
+  templateUrl: './task-list-footer.component.html',
+  styleUrls: ['./task-list-footer.component.css']
 })
-export class TaskListHeaderComponent {
+export class TaskListFooterComponent {
 
   newTask: Task = new Task();
 
@@ -18,5 +18,4 @@ export class TaskListHeaderComponent {
     this.add.emit(this.newTask);
     this.newTask = new Task();
   }
-
 }
