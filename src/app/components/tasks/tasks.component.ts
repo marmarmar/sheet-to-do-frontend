@@ -1,6 +1,8 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import {TaskDataService} from '../../services/task-data.service';
 import { Task } from '../../models/task';
+import {ActualTaskCategoryService} from '../../services/actual-task-category.service';
+import {TaskCategory} from '../../models/task-category';
 
 @Component({
   selector: 'app-tasks',
@@ -12,12 +14,33 @@ export class TasksComponent implements OnInit{
 
   tasks: Task[] = [];
   newTask: Task = new Task();
+  taskCategory: TaskCategory;
 
   public ngOnInit() {
-   this.getAllTasks();
+    // this.actualTaskCategory.currentTaskCategory.subscribe(taskCategory => this.taskCategory = taskCategory);
+    this.actualTaskCategory.currentTaskCategory.subscribe(taskCategory => this.getTasksByCategory(taskCategory));
+
+    // this.getAllTasks();
+    // this.getTasksByCategory();
   }
 
-  constructor(private taskDataService: TaskDataService) {
+  constructor(
+    private taskDataService: TaskDataService,
+    private actualTaskCategory: ActualTaskCategoryService) {
+  }
+
+  getTasksByCategory(taskCategory: TaskCategory): void {
+    if (taskCategory === null) {
+      this.getAllTasks();
+    } else {
+      this.taskDataService
+        .getTasksByCustomCategory(taskCategory)
+        .subscribe(
+          (tasks) => {
+            this.tasks = tasks;
+          }
+        );
+    }
   }
 
   getAllTasks() {
