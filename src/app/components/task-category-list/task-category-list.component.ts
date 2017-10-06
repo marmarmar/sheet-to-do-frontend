@@ -8,7 +8,8 @@ import {TaskCategory} from '../../models/task-category';
   styleUrls: ['./task-category-list.component.css']
 })
 export class TaskCategoryListComponent implements OnInit {
-  taskCategories: TaskCategory[];
+  taskCategories: TaskCategory[] = [];
+  newTaskCategory: TaskCategory = new TaskCategory();
 
   constructor(private taskCategoryService: TaskCategoryService) { }
 
@@ -22,8 +23,16 @@ export class TaskCategoryListComponent implements OnInit {
       );
   }
 
+  onAddTaskCategory(taskCategory: TaskCategory) {
+    this.taskCategoryService
+      .addTaskCategory(taskCategory)
+      .subscribe(
+        (newTaskCategory) => {
+          this.taskCategories = this.taskCategories.concat(newTaskCategory);
+        }
+      );
+  }
   ngOnInit() {
     this.getTaskCategories();
   }
-
 }
