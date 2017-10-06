@@ -24,7 +24,7 @@ import { TaskCategoryFooterComponent } from './components/task-category-footer/t
     TaskListFooterComponent,
     TaskCategoryListComponent,
     TaskCategoryComponent,
-    TaskCategoryFooterComponent,
+    TaskCategoryFooterComponent
   ],
   imports: [
     BrowserModule,
