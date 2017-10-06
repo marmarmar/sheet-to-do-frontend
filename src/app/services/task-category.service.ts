@@ -16,6 +16,14 @@ export class TaskCategoryService {
       .catch(this.handleError);
   }
 
+  public addTaskCategory(taskCategory: TaskCategory): Observable<TaskCategory> {
+    return this.http.post(this.taskCategoryApiUrl + '?userId=1', taskCategory)
+      .map(response => {
+        return new TaskCategory(response.json());
+      })
+      .catch(this.handleError);
+  }
+
   private handleError (error: Response | any) {
     console.error('TaskCategoryService::handleError', error);
     return Observable.throw(error);
