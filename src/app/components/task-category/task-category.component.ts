@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {TaskCategory} from '../../models/task-category';
 import {ActualTaskCategoryService} from '../../services/actual-task-category.service';
+import {TaskCategory} from '../../interfaces/task-category';
 
 @Component({
   selector: 'app-task-category',
