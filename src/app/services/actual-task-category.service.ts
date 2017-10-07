@@ -1,16 +1,18 @@
 import { Injectable } from '@angular/core';
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
-import {TaskCategory} from '../models/task-category';
+import {TaskCategory} from '../interfaces/task-category';
+import {Observable} from 'rxjs/Observable';
 
 @Injectable()
 export class ActualTaskCategoryService {
-  private messageSource = new BehaviorSubject<TaskCategory>(null);
-  currentTaskCategory = this.messageSource.asObservable();
+  private currentTaskCategorySource = new BehaviorSubject<TaskCategory>(null);
+  currentTaskCategory: Observable<TaskCategory> = this.currentTaskCategorySource.asObservable();
 
-  constructor() { }
+  constructor() {
+  }
 
   changeTaskCategory(taskCategory: TaskCategory) {
-    this.messageSource.next(taskCategory);
+    this.currentTaskCategorySource.next(taskCategory);
   }
 
 }
