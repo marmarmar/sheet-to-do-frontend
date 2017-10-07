@@ -11,7 +11,17 @@ export class TaskCategoryListComponent implements OnInit {
   taskCategories: TaskCategory[] = [];
   newTaskCategory: TaskCategory = new TaskCategory();
 
-  constructor(private taskCategoryService: TaskCategoryService) { }
+  allTasksCategoryName: string;
+  todayCategoryName: string;
+  tomorrowCategoryName: string;
+  weekCategoryName: string;
+
+  constructor(private taskCategoryService: TaskCategoryService) {
+    this.allTasksCategoryName = 'All';
+    this.todayCategoryName = 'Today';
+    this.tomorrowCategoryName = 'Tomorrow';
+    this.weekCategoryName = 'Week';
+  }
 
   getTaskCategories(): void {
     this.taskCategoryService
