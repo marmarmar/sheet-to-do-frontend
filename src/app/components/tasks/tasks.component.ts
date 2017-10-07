@@ -2,7 +2,7 @@ import { Component, OnInit, TemplateRef } from '@angular/core';
 import {TaskDataService} from '../../services/task-data.service';
 import { Task } from '../../models/task';
 import {ActualTaskCategoryService} from '../../services/actual-task-category.service';
-import {TaskCategory} from '../../models/task-category';
+import {TaskCategory} from '../../interfaces/task-category';
 
 @Component({
   selector: 'app-tasks',
@@ -13,15 +13,14 @@ import {TaskCategory} from '../../models/task-category';
 export class TasksComponent implements OnInit{
 
   tasks: Task[] = [];
-  newTask: Task = new Task();
   taskCategory: TaskCategory;
+  newTask: Task = new Task();
 
   public ngOnInit() {
-    // this.actualTaskCategory.currentTaskCategory.subscribe(taskCategory => this.taskCategory = taskCategory);
-    this.actualTaskCategory.currentTaskCategory.subscribe(taskCategory => this.getTasksByCategory(taskCategory));
-
-    // this.getAllTasks();
-    // this.getTasksByCategory();
+    this.actualTaskCategory.currentTaskCategory.subscribe(taskCategory => {
+      this.taskCategory = taskCategory;
+      this.getTasksByCategory(taskCategory);
+    });
   }
 
   constructor(
@@ -30,28 +29,16 @@ export class TasksComponent implements OnInit{
   }
 
   getTasksByCategory(taskCategory: TaskCategory): void {
-    if (taskCategory === null) {
-      this.getAllTasks();
-    } else {
+    if (this.taskCategory !== taskCategory) {
+      this.tasks = []; // clean up array for a smooth transition
+    }
+    if (taskCategory != null) {
       this.taskDataService
-        .getTasksByCustomCategory(taskCategory)
-        .subscribe(
-          (tasks) => {
-            this.tasks = tasks;
-          }
-        );
+        .getTasksByCategory(taskCategory)
+        .subscribe(tasks => this.tasks = tasks);
     }
   }
 
-  getAllTasks() {
-    this.taskDataService
-    .getAllTasks()
-    .subscribe(
-      (tasks) => {
-        this.tasks = tasks;
-      }
-    );
-  }
   onToggleTaskDone(task) {
     this.taskDataService.
     toggleTaskDone(task).
@@ -88,7 +75,7 @@ export class TasksComponent implements OnInit{
           .subscribe(
           (archiveTask) => {
               task = archiveTask;
-              this.getAllTasks();
+              this.getTasksByCategory(this.taskCategory);
           }
       );
   }
