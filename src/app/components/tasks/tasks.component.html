@@ -1,9 +1,6 @@
 <!--ToDo section-->
-<div *ngIf="taskCategory">
-  {{ taskCategory.name }}
-</div>
 <section class="todoapp">
-  <app-task-list-header [tasks]="tasks"></app-task-list-header>
+  <app-task-list-header></app-task-list-header>
      <app-task-list [tasks]="tasks"
       (toggleDone)="onToggleTaskDone($event)"
       (update)="onUpdateTask($event)"
