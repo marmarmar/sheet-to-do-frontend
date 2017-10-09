@@ -1,7 +1,7 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import {TaskDataService} from '../../services/task-data.service';
 import { Task } from '../../models/task';
-import {ActualTaskCategoryService} from '../../services/actual-task-category.service';
+import {CurrentTaskCategoryService} from '../../services/actual-task-category.service';
 import {TaskCategory} from '../../interfaces/task-category';
 
 @Component({
@@ -17,7 +17,7 @@ export class TasksComponent implements OnInit{
   newTask: Task = new Task();
 
   public ngOnInit() {
-    this.actualTaskCategory.currentTaskCategory.subscribe(taskCategory => {
+    this.actualTaskCategory.taskCategory.subscribe(taskCategory => {
       this.taskCategory = taskCategory;
       this.getTasksByCategory(taskCategory);
     });
@@ -25,7 +25,7 @@ export class TasksComponent implements OnInit{
 
   constructor(
     private taskDataService: TaskDataService,
-    private actualTaskCategory: ActualTaskCategoryService) {
+    private actualTaskCategory: CurrentTaskCategoryService) {
   }
 
   getTasksByCategory(taskCategory: TaskCategory): void {

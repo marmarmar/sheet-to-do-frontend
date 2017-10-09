@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {TaskCategory} from '../../../interfaces/task-category';
-import {ActualTaskCategoryService} from '../../../services/actual-task-category.service';
+import {CurrentTaskCategoryService} from '../../../services/actual-task-category.service';
 
 @Component({
   selector: 'app-task-list-header',
@@ -11,8 +11,8 @@ export class TaskListHeaderComponent  implements OnInit {
   taskCategory: TaskCategory;
 
   ngOnInit(): void {
-    this.actualTaskCategory.currentTaskCategory.subscribe(taskCategory => this.taskCategory = taskCategory);
+    this.actualTaskCategory.taskCategory.subscribe(taskCategory => this.taskCategory = taskCategory);
   }
 
-  constructor(private actualTaskCategory: ActualTaskCategoryService) { }
+  constructor(private actualTaskCategory: CurrentTaskCategoryService) { }
 }

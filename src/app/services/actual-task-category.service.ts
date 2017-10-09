@@ -4,15 +4,15 @@ import {TaskCategory} from '../interfaces/task-category';
 import {Observable} from 'rxjs/Observable';
 
 @Injectable()
-export class ActualTaskCategoryService {
-  private currentTaskCategorySource = new BehaviorSubject<TaskCategory>(null);
-  currentTaskCategory: Observable<TaskCategory> = this.currentTaskCategorySource.asObservable();
+export class CurrentTaskCategoryService {
+  private taskCategorySource = new BehaviorSubject<TaskCategory>(null);
+  taskCategory: Observable<TaskCategory> = this.taskCategorySource.asObservable();
 
   constructor() {
   }
 
   changeTaskCategory(taskCategory: TaskCategory) {
-    this.currentTaskCategorySource.next(taskCategory);
+    this.taskCategorySource.next(taskCategory);
   }
 
 }

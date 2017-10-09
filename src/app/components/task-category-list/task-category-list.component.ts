@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {TaskCategoryService} from '../../services/task-category.service';
 import {TaskCategory} from '../../interfaces/task-category';
-import {ActualTaskCategoryService} from '../../services/actual-task-category.service';
+import {CurrentTaskCategoryService} from '../../services/actual-task-category.service';
 
 @Component({
   selector: 'app-task-category-list',
@@ -12,7 +12,7 @@ export class TaskCategoryListComponent implements OnInit {
   taskCategories: TaskCategory[];
 
   constructor(private taskCategoryService: TaskCategoryService,
-              private actualTaskCategory: ActualTaskCategoryService) {
+              private actualTaskCategory: CurrentTaskCategoryService) {
   }
 
   getTaskCategories(): void {

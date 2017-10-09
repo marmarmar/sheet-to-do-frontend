@@ -1,15 +1,15 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { ActualTaskCategoryService } from './actual-task-category.service';
+import { CurrentTaskCategoryService } from './actual-task-category.service';
 
-describe('ActualTaskCategoryService', () => {
+describe('CurrentTaskCategoryService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [ActualTaskCategoryService]
+      providers: [CurrentTaskCategoryService]
     });
   });
 
-  it('should be created', inject([ActualTaskCategoryService], (service: ActualTaskCategoryService) => {
+  it('should be created', inject([CurrentTaskCategoryService], (service: CurrentTaskCategoryService) => {
     expect(service).toBeTruthy();
   }));
 });
