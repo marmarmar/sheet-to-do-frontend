@@ -14,7 +14,7 @@ import { AppBootstrapModule } from './app-bootstrap.module';
 import { TaskCategoryListComponent } from './components/task-category-list/task-category-list.component';
 import { TaskCategoryComponent } from './components/task-category/task-category.component';
 import {TaskCategoryService} from './services/task-category.service';
-import {CurrentTaskCategoryService} from './services/actual-task-category.service';
+import {CurrentTaskCategoryService} from './services/current-task-category.service';
 
 @NgModule({
   declarations: [

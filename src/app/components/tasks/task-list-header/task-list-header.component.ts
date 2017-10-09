@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {TaskCategory} from '../../../interfaces/task-category';
-import {CurrentTaskCategoryService} from '../../../services/actual-task-category.service';
+import {CurrentTaskCategoryService} from '../../../services/current-task-category.service';
 
 @Component({
   selector: 'app-task-list-header',

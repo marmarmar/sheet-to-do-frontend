@@ -1,7 +1,7 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import {TaskDataService} from '../../services/task-data.service';
 import { Task } from '../../models/task';
-import {CurrentTaskCategoryService} from '../../services/actual-task-category.service';
+import {CurrentTaskCategoryService} from '../../services/current-task-category.service';
 import {TaskCategory} from '../../interfaces/task-category';
 
 @Component({

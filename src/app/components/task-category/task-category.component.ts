@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {CurrentTaskCategoryService} from '../../services/actual-task-category.service';
+import {CurrentTaskCategoryService} from '../../services/current-task-category.service';
 import {TaskCategory} from '../../interfaces/task-category';
 
 @Component({
