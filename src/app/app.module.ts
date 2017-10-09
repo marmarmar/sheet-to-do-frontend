@@ -3,9 +3,9 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { TasksComponent,
-         TaskListHeaderComponent, 
-         TaskListComponent, 
-         TaskListItemComponent, 
+         TaskListHeaderComponent,
+         TaskListComponent,
+         TaskListItemComponent,
          TaskListFooterComponent} from './components/tasks';
 import {TaskDataService} from './services/task-data.service';
 import { ApiService } from './services/api.service';
@@ -14,7 +14,7 @@ import { AppBootstrapModule } from './app-bootstrap.module';
 import { TaskCategoryListComponent } from './components/task-category-list/task-category-list.component';
 import { TaskCategoryComponent } from './components/task-category/task-category.component';
 import {TaskCategoryService} from './services/task-category.service';
-import { TaskCategoryDefaultComponent } from './components/task-category-default/task-category-default.component';
+import {CurrentTaskCategoryService} from './services/current-task-category.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +25,6 @@ import { TaskCategoryDefaultComponent } from './components/task-category-default
     TaskListFooterComponent,
     TaskCategoryListComponent,
     TaskCategoryComponent,
-    TaskCategoryDefaultComponent,
     TasksComponent
   ],
   imports: [
@@ -37,7 +36,7 @@ import { TaskCategoryDefaultComponent } from './components/task-category-default
     HttpModule,
     AppBootstrapModule
   ],
-  providers: [TaskDataService, ApiService, TaskCategoryService],
+  providers: [TaskDataService, ApiService, TaskCategoryService, CurrentTaskCategoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

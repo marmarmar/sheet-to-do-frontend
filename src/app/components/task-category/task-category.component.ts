@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {TaskCategory} from '../../models/task-category';
+import {CurrentTaskCategoryService} from '../../services/current-task-category.service';
+import {TaskCategory} from '../../interfaces/task-category';
 
 @Component({
   selector: 'app-task-category',
@@ -9,9 +10,13 @@ import {TaskCategory} from '../../models/task-category';
 export class TaskCategoryComponent implements OnInit {
   @Input() public taskCategory: TaskCategory;
 
-  constructor() { }
+  constructor(private currentTaskCategoryService: CurrentTaskCategoryService) { }
 
   ngOnInit() {
+  }
+
+  public changeTaskCategory(): void {
+    this.currentTaskCategoryService.changeTaskCategory(this.taskCategory);
   }
 
 }
