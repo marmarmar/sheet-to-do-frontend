@@ -10,13 +10,13 @@ import {TaskCategory} from '../../interfaces/task-category';
 export class TaskCategoryComponent implements OnInit {
   @Input() public taskCategory: TaskCategory;
 
-  constructor(private actualTaskCategory: CurrentTaskCategoryService) { }
+  constructor(private actualTaskCategoryService: CurrentTaskCategoryService) { }
 
   ngOnInit() {
   }
 
   public changeTaskCategory(): void {
-    this.actualTaskCategory.changeTaskCategory(this.taskCategory);
+    this.actualTaskCategoryService.changeTaskCategory(this.taskCategory);
   }
 
 }
