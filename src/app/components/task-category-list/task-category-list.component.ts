@@ -8,8 +8,7 @@ import {TaskCategory} from '../../models/task-category';
   styleUrls: ['./task-category-list.component.css']
 })
 export class TaskCategoryListComponent implements OnInit {
-  taskCategories: TaskCategory[] = [];
-  newTaskCategory: TaskCategory = new TaskCategory();
+  taskCategories: TaskCategory[];
 
   allTasksCategoryName: string;
   todayCategoryName: string;
