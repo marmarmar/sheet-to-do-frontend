@@ -16,6 +16,7 @@ import { TaskCategoryComponent } from './components/task-category/task-category.
 import {TaskCategoryService} from './services/task-category.service';
 import { TaskCategoryFooterComponent } from './components/task-category-footer/task-category-footer.component';
 import {CurrentTaskCategoryService} from './services/current-task-category.service';
+import { LogInFormComponent } from './components/log-in-form/log-in-form.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import {CurrentTaskCategoryService} from './services/current-task-category.servi
     TaskCategoryListComponent,
     TaskCategoryComponent,
     TasksComponent,
-    TaskCategoryFooterComponent
+    TaskCategoryFooterComponent,
+    LogInFormComponent
   ],
   imports: [
     BrowserModule,
