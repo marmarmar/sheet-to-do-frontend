@@ -13,23 +13,23 @@ import {TaskCategory} from '../../interfaces/task-category';
 export class TasksComponent implements OnInit{
 
   tasks: Task[] = [];
-  taskCategory: TaskCategory;
+  currentTaskCategory: TaskCategory;
   newTask: Task = new Task();
 
   public ngOnInit() {
-    this.actualTaskCategory.taskCategory.subscribe(taskCategory => {
-      this.taskCategory = taskCategory;
+    this.currentTaskCategoryService.taskCategory.subscribe(taskCategory => {
+      this.currentTaskCategory = taskCategory;
       this.getTasksByCategory(taskCategory);
     });
   }
 
   constructor(
     private taskDataService: TaskDataService,
-    private actualTaskCategory: CurrentTaskCategoryService) {
+    private currentTaskCategoryService: CurrentTaskCategoryService) {
   }
 
   getTasksByCategory(taskCategory: TaskCategory): void {
-    if (this.taskCategory !== taskCategory) {
+    if (this.currentTaskCategory !== taskCategory) {
       this.tasks = []; // clean up array for a smooth transition
     }
     if (taskCategory != null) {
@@ -75,7 +75,7 @@ export class TasksComponent implements OnInit{
           .subscribe(
           (archiveTask) => {
               task = archiveTask;
-              this.getTasksByCategory(this.taskCategory);
+              this.getTasksByCategory(this.currentTaskCategory);
           }
       );
   }

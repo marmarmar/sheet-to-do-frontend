@@ -11,8 +11,8 @@ export class TaskListHeaderComponent  implements OnInit {
   taskCategory: TaskCategory;
 
   ngOnInit(): void {
-    this.actualTaskCategory.taskCategory.subscribe(taskCategory => this.taskCategory = taskCategory);
+    this.currentTaskCategoryService.taskCategory.subscribe(taskCategory => this.taskCategory = taskCategory);
   }
 
-  constructor(private actualTaskCategory: CurrentTaskCategoryService) { }
+  constructor(private currentTaskCategoryService: CurrentTaskCategoryService) { }
 }

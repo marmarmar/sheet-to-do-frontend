@@ -12,7 +12,7 @@ export class TaskCategoryListComponent implements OnInit {
   taskCategories: TaskCategory[];
 
   constructor(private taskCategoryService: TaskCategoryService,
-              private actualTaskCategory: CurrentTaskCategoryService) {
+              private currentTaskCategoryService: CurrentTaskCategoryService) {
   }
 
   getTaskCategories(): void {
@@ -20,7 +20,7 @@ export class TaskCategoryListComponent implements OnInit {
       .getTaskCategories()
       .subscribe(taskCategories => {
         this.taskCategories = taskCategories;
-        this.actualTaskCategory.changeTaskCategory(taskCategories[1]); // set default category for today
+        this.currentTaskCategoryService.changeTaskCategory(taskCategories[1]); // set default category for today
       });
   }
 
