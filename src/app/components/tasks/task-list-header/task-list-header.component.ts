@@ -1,16 +1,18 @@
-import { Component, Input } from '@angular/core';
-import { Task } from "../../../models/task";
+import {Component, OnInit} from '@angular/core';
+import {TaskCategory} from '../../../interfaces/task-category';
+import {CurrentTaskCategoryService} from '../../../services/current-task-category.service';
 
 @Component({
   selector: 'app-task-list-header',
   templateUrl: './task-list-header.component.html',
   styleUrls: ['./task-list-header.component.css']
 })
-export class TaskListHeaderComponent  {
+export class TaskListHeaderComponent  implements OnInit {
+  taskCategory: TaskCategory;
 
-  constructor() { }
+  ngOnInit(): void {
+    this.currentTaskCategoryService.taskCategory.subscribe(taskCategory => this.taskCategory = taskCategory);
+  }
 
-  @Input()
-  tasks: Task[];
-
+  constructor(private currentTaskCategoryService: CurrentTaskCategoryService) { }
 }

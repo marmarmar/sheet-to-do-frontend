@@ -14,8 +14,9 @@ import { AppBootstrapModule } from './app-bootstrap.module';
 import { TaskCategoryListComponent } from './components/task-category-list/task-category-list.component';
 import { TaskCategoryComponent } from './components/task-category/task-category.component';
 import {TaskCategoryService} from './services/task-category.service';
-import { TaskCategoryDefaultComponent } from './components/task-category-default/task-category-default.component';
 import { TaskCategoryFooterComponent } from './components/task-category-footer/task-category-footer.component';
+import {CurrentTaskCategoryService} from './services/current-task-category.service';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +27,6 @@ import { TaskCategoryFooterComponent } from './components/task-category-footer/t
     TaskListFooterComponent,
     TaskCategoryListComponent,
     TaskCategoryComponent,
-    TaskCategoryDefaultComponent,
     TasksComponent,
     TaskCategoryFooterComponent
   ],
@@ -39,7 +39,7 @@ import { TaskCategoryFooterComponent } from './components/task-category-footer/t
     HttpModule,
     AppBootstrapModule
   ],
-  providers: [TaskDataService, ApiService, TaskCategoryService],
+  providers: [TaskDataService, ApiService, TaskCategoryService, CurrentTaskCategoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

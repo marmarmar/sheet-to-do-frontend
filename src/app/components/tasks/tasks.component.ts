@@ -1,6 +1,8 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import {TaskDataService} from '../../services/task-data.service';
 import { Task } from '../../models/task';
+import {CurrentTaskCategoryService} from '../../services/current-task-category.service';
+import {TaskCategory} from '../../interfaces/task-category';
 
 @Component({
   selector: 'app-tasks',
@@ -11,24 +13,32 @@ import { Task } from '../../models/task';
 export class TasksComponent implements OnInit{
 
   tasks: Task[] = [];
+  currentTaskCategory: TaskCategory;
   newTask: Task = new Task();
 
   public ngOnInit() {
-   this.getAllTasks();
+    this.currentTaskCategoryService.taskCategory.subscribe(taskCategory => {
+      this.currentTaskCategory = taskCategory;
+      this.getTasksByCategory(taskCategory);
+    });
   }
 
-  constructor(private taskDataService: TaskDataService) {
+  constructor(
+    private taskDataService: TaskDataService,
+    private currentTaskCategoryService: CurrentTaskCategoryService) {
   }
 
-  getAllTasks() {
-    this.taskDataService
-    .getAllTasks()
-    .subscribe(
-      (tasks) => {
-        this.tasks = tasks;
-      }
-    );
+  getTasksByCategory(taskCategory: TaskCategory): void {
+    if (this.currentTaskCategory !== taskCategory) {
+      this.tasks = []; // clean up array for a smooth transition
+    }
+    if (taskCategory != null) {
+      this.taskDataService
+        .getTasksByCategory(taskCategory)
+        .subscribe(tasks => this.tasks = tasks);
+    }
   }
+
   onToggleTaskDone(task) {
     this.taskDataService.
     toggleTaskDone(task).
@@ -65,7 +75,7 @@ export class TasksComponent implements OnInit{
           .subscribe(
           (archiveTask) => {
               task = archiveTask;
-              this.getAllTasks();
+              this.getTasksByCategory(this.currentTaskCategory);
           }
       );
   }
