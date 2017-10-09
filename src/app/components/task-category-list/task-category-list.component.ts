@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {TaskCategoryService} from '../../services/task-category.service';
 import {TaskCategory} from '../../interfaces/task-category';
 import {CurrentTaskCategoryService} from '../../services/current-task-category.service';
+import {TaskCategoryCustom} from '../../models/task-category-custom';
 
 @Component({
   selector: 'app-task-category-list',
@@ -24,7 +25,7 @@ export class TaskCategoryListComponent implements OnInit {
       });
   }
 
-  onAddTaskCategory(taskCategory: TaskCategory) {
+  onAddTaskCategory(taskCategory: TaskCategoryCustom) {
     this.taskCategoryService
       .addTaskCategory(taskCategory)
       .subscribe(

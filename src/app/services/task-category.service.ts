@@ -60,10 +60,10 @@ export class TaskCategoryService {
       .catch(this.handleError);
   }
 
-  public addTaskCategory(taskCategory: TaskCategory): Observable<TaskCategory> {
+  public addTaskCategory(taskCategory: TaskCategoryCustom): Observable<TaskCategoryCustom> {
     return this.http.post(this.taskCategoryApiUrl + '?userId=1', taskCategory)
       .map(response => {
-        return new TaskCategory(response.json());
+        return new TaskCategoryCustom(response.json());
       })
       .catch(this.handleError);
   }

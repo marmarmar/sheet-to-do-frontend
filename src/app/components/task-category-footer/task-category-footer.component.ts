@@ -1,5 +1,5 @@
 import {Component, OnInit, EventEmitter, Output} from '@angular/core';
-import {TaskCategory} from '../../models/task-category';
+import {TaskCategoryCustom} from '../../models/task-category-custom';
 
 @Component({
   selector: 'app-task-category-footer',
@@ -7,15 +7,15 @@ import {TaskCategory} from '../../models/task-category';
   styleUrls: ['./task-category-footer.component.css']
 })
 export class TaskCategoryFooterComponent implements OnInit{
-  newTaskCategory: TaskCategory = new TaskCategory();
+  newTaskCategory: TaskCategoryCustom = new TaskCategoryCustom();
 
   @Output()
-  add: EventEmitter<TaskCategory> = new EventEmitter();
+  add: EventEmitter<TaskCategoryCustom> = new EventEmitter();
 
   constructor() { }
   addTaskCategory() {
     this.add.emit(this.newTaskCategory);
-    this.newTaskCategory = new TaskCategory();
+    this.newTaskCategory = new TaskCategoryCustom();
   }
   ngOnInit() {
   }
