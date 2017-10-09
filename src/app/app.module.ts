@@ -14,7 +14,9 @@ import { AppBootstrapModule } from './app-bootstrap.module';
 import { TaskCategoryListComponent } from './components/task-category-list/task-category-list.component';
 import { TaskCategoryComponent } from './components/task-category/task-category.component';
 import {TaskCategoryService} from './services/task-category.service';
+import { TaskCategoryFooterComponent } from './components/task-category-footer/task-category-footer.component';
 import {CurrentTaskCategoryService} from './services/current-task-category.service';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import {CurrentTaskCategoryService} from './services/current-task-category.servi
     TaskListFooterComponent,
     TaskCategoryListComponent,
     TaskCategoryComponent,
-    TasksComponent
+    TasksComponent,
+    TaskCategoryFooterComponent
   ],
   imports: [
     BrowserModule,

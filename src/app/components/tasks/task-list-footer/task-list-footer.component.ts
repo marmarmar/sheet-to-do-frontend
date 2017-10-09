@@ -1,5 +1,5 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { Task } from "../../../models/task"
+import { Task } from '../../../models/task';
 @Component({
   selector: 'app-task-list-footer',
   templateUrl: './task-list-footer.component.html',
