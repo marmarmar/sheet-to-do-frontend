@@ -1,6 +1,6 @@
 <section class="main" *ngIf="tasks.length > 0">
   <ul class="task-list list-unstyled">
-    <li *ngFor="let task of tasks" [class.Done]="task.done">
+    <li *ngFor="let task of tasks | orderByDate" [class.Done]="task.done">
       <app-task-list-item
       [task]="task"
       (toggleDone)="onToggleTaskDone($event)"
