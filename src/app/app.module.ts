@@ -17,6 +17,7 @@ import {TaskCategoryService} from './services/task-category.service';
 import { TaskCategoryFooterComponent } from './components/task-category-footer/task-category-footer.component';
 import {CurrentTaskCategoryService} from './services/current-task-category.service';
 import { OrderTasksByDatePipe } from './pipes/order-tasks-by-date.pipe';
+import { NavbarComponent } from './components/navbar/navbar.component';
 import { TasksTitleFilterPipe } from './pipes/tasks-title-filter.pipe';
 
 
@@ -32,6 +33,7 @@ import { TasksTitleFilterPipe } from './pipes/tasks-title-filter.pipe';
     TasksComponent,
     TaskCategoryFooterComponent,
     OrderTasksByDatePipe,
+    NavbarComponent,
     TasksTitleFilterPipe
   ],
   imports: [
