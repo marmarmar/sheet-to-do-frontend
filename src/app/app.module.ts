@@ -17,6 +17,7 @@ import {TaskCategoryService} from './services/task-category.service';
 import { TaskCategoryFooterComponent } from './components/task-category-footer/task-category-footer.component';
 import {CurrentTaskCategoryService} from './services/current-task-category.service';
 import { OrderTasksByDatePipe } from './pipes/order-tasks-by-date.pipe';
+import { TasksTitleFilterPipe } from './pipes/tasks-title-filter.pipe';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { OrderTasksByDatePipe } from './pipes/order-tasks-by-date.pipe';
     TaskCategoryComponent,
     TasksComponent,
     TaskCategoryFooterComponent,
-    OrderTasksByDatePipe
+    OrderTasksByDatePipe,
+    TasksTitleFilterPipe
   ],
   imports: [
     BrowserModule,

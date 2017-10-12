@@ -1,7 +1,8 @@
 <!--ToDo section-->
+<input #input (keyup)="onFilterChange(input.value)" class="form-control" placeholder="Search" name="srch-term" id="srch-term" type="text">
 <section class="todoapp">
   <app-task-list-header></app-task-list-header>
-     <app-task-list [tasks]="tasks"
+     <app-task-list [tasks]="tasks | tasksTitleFilter:filterText"
       (toggleDone)="onToggleTaskDone($event)"
       (update)="onUpdateTask($event)"
       (archive)="onArchiveTask($event)">
