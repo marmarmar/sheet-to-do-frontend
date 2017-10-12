@@ -14,7 +14,8 @@ export class TasksComponent implements OnInit{
 
   tasks: Task[] = [];
   currentTaskCategory: TaskCategory;
-  newTask: Task = new Task();
+
+  public filterText: string;
 
   public ngOnInit() {
     this.currentTaskCategoryService.taskCategory.subscribe(taskCategory => {
@@ -78,5 +79,10 @@ export class TasksComponent implements OnInit{
               this.getTasksByCategory(this.currentTaskCategory);
           }
       );
+  }
+
+  onFilterChange(newFilter: string) {
+    this.filterText = newFilter;
+    this.getTasksByCategory(this.currentTaskCategory);
   }
 }
